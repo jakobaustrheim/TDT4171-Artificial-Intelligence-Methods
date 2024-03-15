@@ -46,7 +46,7 @@ def train_model(data: Dict[str, Union[List[Any], np.ndarray, int]], model_type="
         model = keras.Sequential()
 
         #Adding layers to the model
-        model.add(keras.layers.Embedding(input_dim = data["max_length"]+1, output_dim = 20))
+        model.add(keras.layers.Embedding(input_dim = data["vocab_size"], output_dim = 20))
         model.add(keras.layers.Flatten())
         model.add(keras.layers.Dense(36, activation = "relu"))
         model.add(keras.layers.Dense(18, activation = "relu"))
